@@ -1,7 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function About() {
-  return <div>ABOUT PAGE</div>;
+  let { username } = useParams();
+  return <div>ABOUT PAGE for user : {username} </div>;
 }
 
 export default About;

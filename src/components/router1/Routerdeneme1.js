@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
-import Errorpage from "../Errorpage";
+import Errorpage from "./Errorpage";
 
 function Routerdeneme1() {
   return (
@@ -13,18 +13,21 @@ function Routerdeneme1() {
           <Link to="/">Home</Link>
         </div>
         <div>
-          <Link to="/About">About</Link>
+          <Link to="/about">About</Link>
         </div>
         <div>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/about/:username" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Errorpage />} />
       </Routes>
+      <footer>
+        Here is the footer 
+      </footer>
     </Router>
   );
 }
