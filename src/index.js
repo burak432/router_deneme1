@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Deneme1 from "./components/router1/Routerdeneme1"
+import Routerdeneme1 from "./components/router1/Routerdeneme1"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Deneme1 />
+    <Routerdeneme1 />
   </React.StrictMode>,
   document.getElementById('root')
 );
