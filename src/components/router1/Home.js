@@ -1,8 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Home() {
   let navigate = useNavigate();
+  let { username } = useParams();
 
   return (
     <div>

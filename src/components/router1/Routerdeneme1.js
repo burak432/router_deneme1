@@ -13,7 +13,7 @@ function Routerdeneme1() {
           <Link to="/">Home</Link>
         </div>
         <div>
-          <Link to="/about">About</Link>
+          <Link to="/about/:username">About</Link>
         </div>
         <div>
           <Link to="/contact">Contact</Link>
