@@ -18,9 +18,6 @@ function Router2() {
         <li>
           <Link to="/users">Users</Link>
         </li>
-        <li>
-          <Link to="/user">User</Link>
-        </li>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
