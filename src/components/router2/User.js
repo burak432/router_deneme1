@@ -1,5 +1,5 @@
 import react from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -10,22 +10,25 @@ function User() {
 
   useEffect(() => {
     axios(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(res => setUser(res.data))
+      .then((res) => setUser(res.data))
       .finally(() => setisLoading(false));
-  }, []);
+  }, [id]);
 
   return (
     <div>
-      <h1>USER PAGE</h1>
+      <h1>USER DETAILS</h1>
       {isLoading && <div>Loading...</div>}
-      <h3>user id : {id} </h3>
-      <div>
-        <ul>
-          <li>{user.name}</li>
-          <li>{user.phone}</li>
-          <li>{user.email}</li>
-        </ul>
-      </div>
+      {!isLoading && (
+        <div>
+          <h3>user id : {id} </h3>
+          <ul>
+            <li>{user.name}</li>
+            <li>{user.phone}</li>
+            <li>{user.email}</li>
+          </ul>
+          <Link to={`/user/${parseInt(id)+1}`}>Next user({parseInt(id)+1})</Link>
+        </div>
+      )}
     </div>
   );
 }
