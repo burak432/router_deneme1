@@ -1,35 +1,22 @@
-import react from "react";
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Users from "./Users";
 import User from "./User";
+import Errorpage from "./Errorpage";
+import "./style.css";
 
 function Router2() {
-  let activeStyle = {
-    backgroundColor : "#000",
-    color : "#fff",
-    padding: "0.5em"
-  };
-
   return (
     <Router>
-      <nav>
-        <li>
-          <NavLink style={({isActive}) => isActive ? activeStyle : undefined} to="/" >Home</NavLink>
-        </li>
-        <li>
-          <NavLink style={({isActive}) => isActive ? activeStyle : undefined} to="/about">About</NavLink>
-        </li>
-        <li>
-          <NavLink style={({isActive}) => isActive ? activeStyle : undefined} to="/users">Users</NavLink>
-        </li>
-      </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/user/:id" element={<User />} />
+        <Route path="/" element={<Home />}>
+          <Route path="about" element={<About />} />
+          <Route path="users" element={<Users />}>
+            <Route path=":id" element={<User />} />
+          </Route>
+          <Route path="*" element={<Errorpage />} />
+        </Route>
       </Routes>
     </Router>
   );

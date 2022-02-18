@@ -1,10 +1,9 @@
-import react from "react";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function User() {
-  const { id } = useParams();
+  let  { id } = useParams();
   const [user, setUser] = useState([]);
   const [isLoading, setisLoading] = useState(true);
 
@@ -26,7 +25,7 @@ function User() {
             <li>{user.phone}</li>
             <li>{user.email}</li>
           </ul>
-          <Link to={`/user/${parseInt(id)+1}`}>Next user({parseInt(id)+1})</Link>
+          <Link to={`/users/${parseInt(id)+1}`}>Next user({parseInt(id)+1})</Link>
         </div>
       )}
     </div>

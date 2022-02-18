@@ -1,9 +1,22 @@
-import react from "react";
+import { Link, Outlet } from "react-router-dom";
+import "./style.css";
+
 function Home() {
   return (
-    <div>
-      <h1>HOME PAGE</h1>
-    </div>
+    <nav className="navmenu">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/users">Users</Link>
+        </li>
+      </ul>
+      <Outlet />
+    </nav>
   );
 }
 

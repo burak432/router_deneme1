@@ -1,4 +1,3 @@
-import react from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -15,7 +14,6 @@ function Users() {
   return (
     <div>
       <h1>USERS PAGE</h1>
-      <hr />
       {isLoading && <div>Loading...</div>}
       {!isLoading && (
         <div>
@@ -23,12 +21,14 @@ function Users() {
           <ul>
             {users.map((user, i) => (
               <li key={user.id}>
-                <Link to={`/user/${user.id}`}>{user.name}</Link>
+                {/* IMPORTANT NOTE. its not /user, but "/users" */}
+                <Link to={`/users/${user.id}`}>{user.name}</Link>
               </li>
             ))}
           </ul>
         </div>
       )}
+      <Outlet />
     </div>
   );
 }

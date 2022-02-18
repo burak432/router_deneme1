@@ -1,0 +1,6 @@
+nav > li {
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.2em 1em;
+}
