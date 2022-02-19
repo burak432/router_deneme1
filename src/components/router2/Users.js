@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -11,6 +11,12 @@ function Users() {
       .finally(() => setisLoading(false));
   }, []);
 
+  let activeStyle = {
+    backgroundColor: "#000",
+    color: "#fff",
+    padding: "0.2em",
+  };
+
   return (
     <div>
       <h1>USERS PAGE</h1>
@@ -22,7 +28,12 @@ function Users() {
             {users.map((user, i) => (
               <li key={user.id}>
                 {/* IMPORTANT NOTE. its not /user, but "/users" */}
-                <Link to={`/users/${user.id}`}>{user.name}</Link>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to={`/users/${user.id}`}
+                >
+                  {user.name}
+                </NavLink>
               </li>
             ))}
           </ul>

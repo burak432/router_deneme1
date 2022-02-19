@@ -13,6 +13,14 @@ function Router2() {
         <Route path="/" element={<Home />}>
           <Route path="about" element={<About />} />
           <Route path="users" element={<Users />}>
+            <Route
+              index
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>Select a user to display here</p>
+                </main>
+              }
+            />
             <Route path=":id" element={<User />} />
           </Route>
           <Route path="*" element={<Errorpage />} />
