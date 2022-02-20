@@ -1,6 +1,13 @@
-nav > li {
+/* * {
+  box-sizing: border-box;
+}
+
+.userlist {
   list-style: none;
   font-size: 20px;
-  font-weight: bold;
-  padding: 0.2em 1em;
+  padding: 6px;
 }
+
+.userlist a {
+  text-decoration: none;
+} */
